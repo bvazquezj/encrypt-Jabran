@@ -37,6 +37,10 @@ body{
     font-size: 30px;
 }
 
+.txta-encript::placeholder{
+    color: #0A3871;
+}
+
 .txta-encript:focus{
     outline: none;
 }
