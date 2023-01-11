@@ -1,0 +1,249 @@
+body{
+    background: #E5E5E5;
+}
+
+#vector{
+    margin-top: 2%;
+    position: relative;
+    left: 5%;
+}
+
+.encript{
+    display: flex;
+    flex-direction: column;
+    justify-items: end;
+    position: absolute;
+    margin: 2.7777778%;
+    top: 10%;
+    left: 10%;
+
+    width: 55%;
+    height: 80%;
+    border-radius: 5%;
+}
+
+.txta-encript{
+    background: fixed;
+    margin: 8%;
+    width: 84%;
+    height: 58vh;
+    border-style: none;
+    resize: none;
+    overflow: hidden;
+
+    color: #0A3871;
+    font-family: "Inter";
+    font-style: normal;
+    font-size: 30px;
+}
+
+.txta-encript:focus{
+    outline: none;
+}
+
+.encript p{
+    font-size: small;
+    font-style: italic;
+    color: rgba(0, 0, 0, .5);
+}
+
+.encript img{
+    float: left;
+    margin-right: 5px;
+}
+
+.encript button{
+    vertical-align: baseline;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+    text-align: center;
+    width: 40%;
+    height: 50px;
+    margin: 20px;
+
+    border: 1px solid #0A3871;
+    border-radius: 20px;
+}
+
+#encript{
+    background: #0A3871;
+    color: #FFF;
+    transition: 400ms;
+}
+
+#encript:hover{
+    background: #D8DFE8;
+    color: #0A3871;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+#desencript{
+    background: #D8DFE8;
+    color: #0A3871;
+    transition: 400ms;
+}
+
+#desencript:hover{
+    background: #0A3871;
+    color: #FFF;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+
+.result{
+    background-color:  #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    position: absolute;
+    margin: 2.7777778%;
+    top: 0;
+    right: 0;
+
+    width: 25%;
+    height: 90vh;
+
+    border-radius: 5%;
+    box-shadow: 0 24px 32px -8px rgba(0, 0,0, .08);
+}
+
+.muñeco{
+    width: 90%;
+    -ms-flex-align: center;
+    margin: 0 5%;
+    text-align: center;
+    vertical-align: 100%;
+}
+
+.muñeco img{
+    width: 80%;
+}
+
+.result textarea{
+    background: fixed;
+    margin: 8%;
+    width: 84%;
+    height: 76vh;
+    border-style: none;
+    resize: none;
+    
+
+    font-size: 20px;
+    font-family: "Inter";
+    font-style: normal;
+}
+
+.result button{
+    left: 10%;
+    vertical-align: baseline;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+    text-align: center;
+    margin: 20px;
+    width: 80%;
+    height: 50px;
+    
+
+    border: 1px solid #0A3871;
+    border-radius: 20px;
+    transition: 400ms;
+}
+
+.result button:hover{
+    background: #0A3871;
+    color: #FFF;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 768px){
+
+    section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .encript{
+        width: 100%;
+        left: auto;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .txta-encript{
+        width: 80%;
+        margin: 5%;
+        height: 50vh;
+    }
+
+    .encript div{
+        padding: 0 0 0 5%;
+    }
+
+    #encript{
+        margin: 20px 10% 20px 0;
+    }
+
+    .result{
+        position: relative;
+        top: auto;
+        right: auto;
+        display: flex;
+        width: 90%;
+        height: 40%;
+        border-radius: 20px;
+    }
+
+    #resultado{
+        height: auto;
+    }
+    .muñeco{
+        margin: 20px;
+    }
+    .muñeco img{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 480px){
+    .txta-encript{
+        width: 90%;
+        height: 35vh;
+    }
+
+    .encript button{
+        width: 95%;
+        margin: 0 5% 0 0;
+    }
+
+    #encript{
+        margin: 20px 0;
+    }
+
+    #desencript{
+        margin: 0 0 20px 0;
+    }
+
+    .result{
+        margin-top: 10%;
+        height: auto;
+    }
+
+    .muñeco{
+        padding: 5%;
+    }
+
+    .muñeco h2{
+        font-size: 1.7em;
+    }
+}

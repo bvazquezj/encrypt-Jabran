@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ES">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="Images/Vector.svg">
+    <title>Encriptador</title>
+</head>
+<body>
+    <header>
+        <h1><img id="vector" src="Images/Vector.svg" ></h1>
+    </header>
+
+    <main>
+            <section>
+                <div class="encript">
+                    <textarea class="txta-encript" id="input" cols="30" rows="10">ingrese el texto aqui.</textarea>
+                    <div>
+                        <p><img src="Images/important.png" alt="signo importamte"> No uses asentos ni mayusculas</p>
+                        <button id="encript">Encriptar</button>
+                        <button id="desencript">Desencriptar</button>
+                    </div>
+                        
+                </div>    
+                <div class="result" id="res_just">
+                    <div class="muñeco" id="box-muñ">
+                        <img src="Images/Muñeco.svg" alt="Muñeco-mensaje-no-encontrado">
+                        <h2>Ningún mensaje fue encontrado</h2>
+                        <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+                    </div>
+                    <textarea id="resultado" cols="30" rows="10" disabled="true"></textarea>
+                    <button id="Copiar">Copiar</button>
+                </div>
+            </section>
+    </main>
+
+    <footer>
+
+    </footer>
+    <script src="encript.js"></script>
+</body>
+</html>
