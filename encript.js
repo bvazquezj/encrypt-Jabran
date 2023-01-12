@@ -7,6 +7,7 @@ var txta_res = document.getElementById("resultado");
 var res_des = document.querySelector("#resultado").style.display = "none";
 var btn_copy_des = document.querySelector("#Copiar").style.display = "none";
 var oc_mun;
+const expreg = /[A-Z\W\s]/;
 
 function activar() {
     oc_mun = document.querySelector("#box-muñ").style.display = "none";
@@ -24,7 +25,10 @@ function encriptar() {
     var new_word = ""; 
     var aux;
     var string = inp.value;
-    if (string == "") {
+    if (expreg.test(string)) {
+        alert("recuerda no usar mayusculas ni acentos");
+        string = "";
+    }if (string == "") {
         desactivar();
     }else{
         activar();
@@ -60,16 +64,19 @@ function desencriptar() {
     var new_word = ""; 
     var aux;
     var string = inp.value;
-    if (string == "") {
+    if (expreg.test(string)) {
+        alert("recuerda no usar mayusculas ni acentos");
+        string = "";
+    }if (string == "") {
         desactivar();
     }else{
         activar();
     }
-    for (let i = 0; i < string.length; i++) {
-        switch (string.charAt(i)) {
+    for (let i = 0; i < string.length; i++) { 
+       switch (string.charAt(i)) {
             case 'a':
                 aux = i + 1;
-                break;
+                break;               
             case 'e':
                 aux = i + 4;
                 break;
@@ -78,7 +85,7 @@ function desencriptar() {
                 break;
             case 'o':
                 aux = i + 3;
-                break;
+                    break;
             case 'u':
                 aux = i + 3;
                 break;
@@ -87,8 +94,8 @@ function desencriptar() {
                 break;
         }
         new_word = new_word + string.charAt(i);
-        i = aux;
-    } 
+        i = aux;   
+    }
     res.value = new_word;
 }
 
