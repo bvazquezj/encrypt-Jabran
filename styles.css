@@ -1,25 +1,35 @@
+:root{
+    background-image: url("./Images/giraffe-texture.jpg");
+}
 body{
-    background: #E5E5E5;
+    
+}
+h1{
+    background: none;
 }
 
 #vector{
-    margin-top: 2%;
+    width: 50px;
+    height: 50px;
+    margin-top: 1%;
     position: relative;
     left: 5%;
 }
 
 .encript{
+    background-color: #fdf1e1;
     display: flex;
     flex-direction: column;
     justify-items: end;
     position: absolute;
     margin: 2.7777778%;
-    top: 10%;
+    top: 6%;
     left: 10%;
 
     width: 55%;
     height: 80%;
     border-radius: 5%;
+    box-shadow: 0px 0px 50px rgb(0 0 0 / 50%);
 }
 
 .txta-encript{
@@ -31,14 +41,14 @@ body{
     resize: none;
     overflow: hidden;
 
-    color: #0A3871;
+    color: #834328;
     font-family: "Inter";
     font-style: normal;
     font-size: 30px;
 }
 
 .txta-encript::placeholder{
-    color: #0A3871;
+    color: #834328;
 }
 
 .txta-encript:focus{
@@ -46,9 +56,18 @@ body{
 }
 
 .encript p{
+    width: 100%;
     font-size: small;
     font-style: italic;
+    margin-left: 15px;
     color: rgba(0, 0, 0, .5);
+}
+
+.encript .footer-encrypt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .encript img{
@@ -67,31 +86,31 @@ body{
     height: 50px;
     margin: 20px;
 
-    border: 1px solid #0A3871;
+    border: 1px solid #834328;
     border-radius: 20px;
 }
 
 #encript{
-    background: #0A3871;
+    background: #834328;
     color: #FFF;
-    transition: 400ms;
+    transition: 250ms;
 }
 
 #encript:hover{
-    background: #D8DFE8;
-    color: #0A3871;
+    background: #fdf1e1;
+    color: #834328;
     cursor: pointer;
     transform: scale(1.2);
 }
 
 #desencript{
-    background: #D8DFE8;
-    color: #0A3871;
-    transition: 400ms;
+    background: #fdf1e1;
+    color: #834328;
+    transition: 250ms;
 }
 
 #desencript:hover{
-    background: #0A3871;
+    background: #834328;
     color: #FFF;
     cursor: pointer;
     transform: scale(1.2);
@@ -99,7 +118,8 @@ body{
 
 
 .result{
-    background-color:  #FFF;
+    background-color: #834328;
+    color: #FFF;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,7 +134,7 @@ body{
     height: 90vh;
 
     border-radius: 5%;
-    box-shadow: 0 24px 32px -8px rgba(0, 0,0, .08);
+    box-shadow:0 15px 21px -6px rgb(0 0 0 / 50%);
 }
 
 .muñeco{
@@ -131,6 +151,7 @@ body{
 
 .result textarea{
     background: fixed;
+    color: #fdf1e1;
     margin: 8%;
     width: 84%;
     height: 76vh;
@@ -154,16 +175,16 @@ body{
     margin: 20px;
     width: 80%;
     height: 50px;
-    
 
-    border: 1px solid #0A3871;
+    background-color: #fdf1e1;
+    border: 1px solid #834328;
     border-radius: 20px;
-    transition: 400ms;
+    transition: 250ms;
 }
 
 .result button:hover{
-    background: #0A3871;
-    color: #FFF;
+    background-color: rgb(255, 183, 1);
+    color: #000;
     cursor: pointer;
     transform: scale(1.2);
 }
@@ -177,7 +198,7 @@ body{
     }
     
     .encript{
-        width: 100%;
+        width: 90%;
         left: auto;
         margin: 0 auto;
         position: relative;
@@ -187,14 +208,6 @@ body{
         width: 80%;
         margin: 5%;
         height: 50vh;
-    }
-
-    .encript div{
-        padding: 0 0 0 5%;
-    }
-
-    #encript{
-        margin: 20px 10% 20px 0;
     }
 
     .result{
@@ -225,8 +238,14 @@ body{
         height: 55vh;
     }
 
+    .encript .footer-encrypt{
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
     .encript button{
-        width: 95%;
+        width: 85%;
         margin: 0 5% 0 0;
     }
 
@@ -234,8 +253,16 @@ body{
         margin: 20px 0;
     }
 
+    #encript:hover{
+        transform: scale(1.1);
+    }
+
     #desencript{
         margin: 0 0 20px 0;
+    }
+
+    #desencript:hover{
+        transform: scale(1.1);
     }
 
     .result{

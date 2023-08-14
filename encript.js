@@ -1,13 +1,14 @@
-var inp = document.querySelector("#input");
-var res = document.querySelector("#resultado");
-var btn_enc = document.querySelector("#encript");
-var btn_denc = document.querySelector("#desencript");
-var btn_copy = document.querySelector("#Copiar");
-var txta_res = document.getElementById("resultado");
-var res_des = document.querySelector("#resultado").style.display = "none";
-var btn_copy_des = document.querySelector("#Copiar").style.display = "none";
-var oc_mun;
-const expreg = /[A-Z\W\s]/;
+let inp = document.querySelector("#input");
+let res = document.querySelector("#resultado");
+let btn_enc = document.querySelector("#encript");
+let btn_denc = document.querySelector("#desencript");
+let btn_copy = document.querySelector("#Copiar");
+let txta_res = document.getElementById("resultado");
+let res_des = document.querySelector("#resultado").style.display = "none";
+let btn_copy_des = document.querySelector("#Copiar").style.display = "none";
+let oc_mun;
+const query = "qwertyuiopasdfghjklñzxcvbnm ";
+const expreg = /^[A-Z\s]+$/i;
 
 function activar() {
     oc_mun = document.querySelector("#box-muñ").style.display = "none";
@@ -21,12 +22,12 @@ function desactivar() {
     btn_copy_des = document.querySelector("#Copiar").style.display = "none";
 }
 
-function encriptar() {
+function encriptar() {    
     var new_word = ""; 
     var aux;
     var string = inp.value;
-    if (expreg.test(string)) {
-        alert("recuerda no usar mayusculas ni acentos");
+    if (!expreg.test(string)) {
+        alert("recuerda no usar mayúsculas ni acentos");
         string = "";
     }if (string == "") {
         desactivar();
@@ -34,27 +35,20 @@ function encriptar() {
         activar();
     }
     for (let i = 0; i < string.length; i++) {
-        switch (string.charAt(i)) {
-            case 'a':
-                aux = "ai";
-                break;
-            case 'e':
-                aux = "enter";
-                break;
-            case 'i':
-                aux = "imes";
-                break;
-            case 'o':
-                aux = "ober";
-                break;
-            case 'u':
-                aux = "ufat";
-                break;
-            default:
-                aux = string.charAt(i);    
-                break;
+        for(let j =0; j < query.length; j++){
+            if (string.charAt(i) == query.charAt(j)) {
+                if (j>=query.length-3) {
+                    if (j == query.length - 1) {
+                        aux = query.charAt(query.length-1);
+                    }else{
+                        aux = query.charAt(j-25);
+                    }
+                }else{
+                    aux = query.charAt(j+2); 
+                }
+                new_word = new_word + aux;
+            }
         }
-        new_word = new_word + aux;
     }
 
     res.value = new_word;
@@ -64,37 +58,30 @@ function desencriptar() {
     var new_word = ""; 
     var aux;
     var string = inp.value;
-    if (expreg.test(string)) {
-        alert("recuerda no usar mayusculas ni acentos");
+    if (!expreg.test(string)) {
+        alert("recuerda no usar mayúsculas ni acentos");
         string = "";
     }if (string == "") {
         desactivar();
     }else{
         activar();
     }
-    for (let i = 0; i < string.length; i++) { 
-       switch (string.charAt(i)) {
-            case 'a':
-                aux = i + 1;
-                break;               
-            case 'e':
-                aux = i + 4;
-                break;
-            case 'i':
-                aux = i + 3;
-                break;
-            case 'o':
-                aux = i + 3;
-                    break;
-            case 'u':
-                aux = i + 3;
-                break;
-            default:
-                aux = i;    
-                break;
+    for (let i = 0; i < string.length; i++) {
+        for(let j =0; j < query.length; j++){
+            if (string.charAt(i) == query.charAt(j)) {
+                console.log(string.charAt(i) + query.charAt(j))
+                if(j>=2){
+                    if(j == query.length-1){
+                        aux = query.charAt(query.length-1);
+                    }else{
+                        aux = query.charAt(j-2);
+                    }
+                }else{
+                    aux = query.charAt(j + 25);
+                }
+                new_word = new_word + aux;
+            }
         }
-        new_word = new_word + string.charAt(i);
-        i = aux;   
     }
     res.value = new_word;
 }
@@ -106,5 +93,3 @@ function copi() {
 btn_enc.onclick = encriptar;
 btn_denc.onclick = desencriptar;
 btn_copy.onclick = copi;
-
-
